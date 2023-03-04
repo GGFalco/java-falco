@@ -1,5 +1,5 @@
 # Object Oriented Programming (Java-Core)
 
-### [Java Class]
+### Java Class
 
 * Some excercises to practice in Java.

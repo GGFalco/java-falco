@@ -2,4 +2,4 @@
 
 ### [Java Class]
 
-Some excercises to practice in Java.
+* Some excercises to practice in Java.

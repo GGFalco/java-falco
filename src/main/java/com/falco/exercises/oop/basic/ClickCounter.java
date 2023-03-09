@@ -29,11 +29,15 @@ public class ClickCounter {
         return "ClickCounter{" + "clicks=" + clicks + '}';
     }
 
-    /* La funzione statica è riferita solo alla classe e non alle istanze*/
+    // La funzione statica è riferita solo alla classe e non alle istanze
+    // ClickCounter.hello() e non cc.hello();
     public static void hello(){
         System.out.println("Hello");
     }
 
+
+    // redifinisco l'equals per far vero il confronto tra due oggetti della stessa classe
+    // altrimenti darebbe falso (esempio sotto nel main)
     @Override
     public boolean equals(Object o) {
         if (this == o)

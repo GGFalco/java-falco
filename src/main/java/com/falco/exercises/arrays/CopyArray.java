@@ -1,4 +1,4 @@
-package com.falco.exercises.warmup.arrays;
+package com.falco.exercises.arrays;
 
 /**
  * Accepting a double[] and returning a copy of the double[]

@@ -19,7 +19,7 @@ public class EqualIsNot {
             if (i < 0) {
                 break;
             }
-            subString = subString.substring(i + "is".length(), subString.length());
+            subString = subString.substring(i + "is".length());
             numberOfIs++;
         }
 

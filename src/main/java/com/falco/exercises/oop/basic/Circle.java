@@ -27,31 +27,31 @@ public class Circle {
         this.center = center;
     }
 
-    public double getPerimeter(){
+    public double getPerimeter() {
         return 2 * Math.PI * this.radius;
     }
 
-    public double getArea(){
-        return Math.pow(Math.PI,Math.PI) * this.radius;
+    public double getArea() {
+        return Math.pow(Math.PI, Math.PI) * this.radius;
     }
 
     // distanza dal punto e minore dalla distanza dal raggio
-    public boolean contains(Point point){
+    public boolean contains(Point point) {
         return point.distance(center) < this.radius;
     }
 
-    public void translate(int dx, int dy){
+    public void translate(int dx, int dy) {
         this.center.x += dx;
         this.center.y += dy;
     }
 
     @Override
     public String toString() {
-        return "Circle{" + "radius=" + radius + ", Center={x= " + center.x +", y= "+ center.y+ '}';
+        return "Circle{" + "radius=" + radius + ", Center={x= " + center.x + ", y= " + center.y + '}';
     }
 
     public static void main(String[] args) {
-        Circle cc = new Circle(5, new Point(0,0));
+        Circle cc = new Circle(5, new Point(0, 0));
         System.out.println(cc);
     }
 }

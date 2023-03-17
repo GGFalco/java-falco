@@ -1,7 +1,6 @@
 package com.falco.exercises.oop.bankaccount;
 
-
-public abstract class AbstractBankAccount implements BankAccount{
+public abstract class AbstractBankAccount implements BankAccount {
 
     String IBAN;
     protected double balance;
@@ -15,49 +14,49 @@ public abstract class AbstractBankAccount implements BankAccount{
         this.interestRate = interestRate;
     }
 
-    protected void applyFee(){
-        this.balance -= this.operationFee;
+    protected void applyFee() {
+        balance -= operationFee;
     }
 
-    protected void checkIBAN(String IBAN){
-        if(IBAN.length() < 8 || IBAN.length() > 34){
+    protected void checkIBAN(String IBAN) {
+        if (IBAN.length() < 8 || IBAN.length() > 34) {
             throw new IllegalArgumentException("Invalid lenght");
         }
-        String check = IBAN.substring(0,2);
+        String check = IBAN.substring(0, 2);
 
-        if( !(Character.isUpperCase(check.charAt(0)) && Character.isUpperCase(check.charAt(1)))){
+        if (!(Character.isUpperCase(check.charAt(0)) && Character.isUpperCase(check.charAt(1)))) {
             throw new IllegalArgumentException("Invalid country code");
         }
     }
 
     @Override
     public void addInterest() {
-        this.balance = this.balance * this.interestRate;
+        balance *= interestRate;
     }
 
     @Override
-    public void deposit(double money) {
-        this.balance += money;
+    public void deposit(double amount) {
+        balance += amount;
     }
 
     @Override
     public double getBalance() {
-        return this.balance;
+        return balance;
     }
 
     @Override
     public String getIBAN() {
-        return this.IBAN;
+        return IBAN;
     }
 
     @Override
     public double getInterestRate() {
-        return this.interestRate;
+        return interestRate;
     }
 
     @Override
     public double getOperationFee() {
-        return this.operationFee;
+        return operationFee;
     }
 
     @Override
@@ -84,14 +83,15 @@ public abstract class AbstractBankAccount implements BankAccount{
     }
 
     @Override
-    public double transfer(BankAccount bank, double sum) {
-        bank.deposit(sum);
-        return withdraw(sum);
+    public double transfer(BankAccount bank, double amount) {
+        bank.deposit(amount);
+        withdraw(amount);
+        return amount;
     }
 
     @Override
-    public double withdraw(double money) {
-        return this.balance-= money;
+    public double withdraw(double amount) {
+        balance -= amount;
+        return amount;
     }
-
 }

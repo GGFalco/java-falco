@@ -32,9 +32,15 @@ public class ListPoly extends AbstractPoly {
     }
 
     @Override
-    public Poly derivate() {
-        ListPoly newCoefficients = new ListPoly(coefficients);
-        newCoefficients.coefficients.remove(0);
-        return newCoefficients;
+    public Poly derivative() {
+        ArrayList<Double> newCoefficients = new ArrayList<Double>();
+        for (int i = 1; i < coefficients.size(); i++) {
+            newCoefficients.add(coefficients.get(i) * i);
+        }
+        ListPoly newPoly = new ListPoly(newCoefficients);
+        return newPoly;
     }
+
+
+
 }

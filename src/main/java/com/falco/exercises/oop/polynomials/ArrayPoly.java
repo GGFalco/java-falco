@@ -28,14 +28,13 @@ public class ArrayPoly extends AbstractPoly {
     }
 
     @Override
-    public Poly derivate() {
-
-        System.arraycopy(coefficients, 1, coefficients, 0, coefficients.length);
-        size--;
+    public Poly derivative() {
+        double [] newCoefficients = new double[coefficients.length-1];
+        System.arraycopy(coefficients, 1, newCoefficients, 0, coefficients.length);
         for (int i = 0; i < size; i++) {
-            coefficients[i] += (i + 1);
+            newCoefficients[i] += (i + 1);
         }
-        ArrayPoly poly = new ArrayPoly(coefficients);
+        ArrayPoly poly = new ArrayPoly(newCoefficients);
         return poly;
     }
 }

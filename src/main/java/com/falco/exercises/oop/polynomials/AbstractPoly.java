@@ -26,11 +26,7 @@ public abstract class AbstractPoly implements Poly {
             return false;
         }
 
-        for (int i = 0; i < ((AbstractPoly) o).coefficients().length; i++) {
-            if (this.coefficient(i) != ((AbstractPoly) o).coefficient(i)) {
-            }
-        }
-        return true;
+        return Arrays.equals(coefficients(),((AbstractPoly) o).coefficients());
     }
 
     @Override

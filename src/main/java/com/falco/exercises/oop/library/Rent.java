@@ -51,7 +51,7 @@ public class Rent {
     }
 
     public boolean isExpired(LocalDate date) {
-        return date.isBefore(end);
+        return end.isBefore(date);
     }
 
     @Override

@@ -3,8 +3,7 @@ package com.falco.exercises.collections;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class WordAfterWord {
 
@@ -16,7 +15,14 @@ public class WordAfterWord {
         return Arrays.asList(line.replaceAll("[^a-zA-Z ]", "").toLowerCase().split("\\s+"));
     }
 
-    public static String wordAfterWord(String filename, String word) throws IOException{
+    public static String wordAfterWord(String filename, String word) throws IOException {
+        TreeSet<String> book = new TreeSet<>();
+        List<String> lines = getLines(filename);
 
+        for (String line : lines) {
+            book.addAll(lineToWords(line));
+        }
+
+        return book.tailSet(word, false).first();
     }
 }

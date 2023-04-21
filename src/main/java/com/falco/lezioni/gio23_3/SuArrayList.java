@@ -1,4 +1,4 @@
-package com.falco.lezioni;
+package com.falco.lezioni.gio23_3;
 
 import com.falco.exercises.oop.phonebook.Person;
 
